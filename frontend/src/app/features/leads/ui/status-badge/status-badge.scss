@@ -1,29 +1,43 @@
+// Color-token reuse note: these are the same grau/lila/amber/grün -bg/-border
+// token PAIRS used for lead *temperature* badges (hot/warm/cold/new) in the
+// CRM mockup. There is no 1:1 status match for this project's pipeline
+// states (new/enriched/contacted/qualified) — the mapping below is a fresh
+// assignment of the existing color tokens, not a copied 1:1 status mapping.
+// new       -> neutral/grey   (--color-surface / --color-text-secondary)
+// enriched  -> purple         (--color-purple-bg / --color-purple-border / --color-purple-muted)
+// contacted -> amber          (--color-amber-bg / --color-amber-border / --color-amber)
+// qualified -> green          (--color-green-bg / --color-green-border / --color-green)
 .status-badge {
   display: inline-block;
-  padding: 0.15rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.75rem;
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.03em;
+  border: 1px solid transparent;
 
   &--new {
-    background: #e5e7eb;
-    color: #374151;
+    background: var(--color-surface);
+    border-color: var(--color-surface-border);
+    color: var(--color-text-secondary);
   }
 
   &--enriched {
-    background: #dbeafe;
-    color: #1e40af;
+    background: var(--color-purple-bg);
+    border-color: var(--color-purple-border);
+    color: var(--color-purple-muted);
   }
 
   &--contacted {
-    background: #fef3c7;
-    color: #92400e;
+    background: var(--color-amber-bg);
+    border-color: var(--color-amber-border);
+    color: var(--color-amber);
   }
 
   &--qualified {
-    background: #d1fae5;
-    color: #065f46;
+    background: var(--color-green-bg);
+    border-color: var(--color-green-border);
+    color: var(--color-green);
   }
 }
