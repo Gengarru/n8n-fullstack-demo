@@ -1,0 +1,25 @@
+<div class="app-shell">
+  <aside class="app-shell__sidebar">
+    <div class="app-shell__logo">
+      <span class="app-shell__logo-mark">LE</span>
+      <span class="app-shell__logo-text">
+        Lead Enrichment
+        <span>Reference Demo</span>
+      </span>
+    </div>
+
+    <nav class="app-shell__nav">
+      <a
+        class="app-shell__nav-link"
+        routerLink="/leads"
+        routerLinkActive="app-shell__nav-link--active"
+      >
+        Leads
+      </a>
+    </nav>
+  </aside>
+
+  <main class="app-shell__main">
+    <router-outlet />
+  </main>
+</div>
