@@ -3,11 +3,14 @@
     <button class="lead-detail__back" type="button" (click)="goBack()">← Zurück zur Liste</button>
 
     <header class="lead-detail__header">
-      <h1>{{ currentLead.companyName }}</h1>
-      <app-status-badge [status]="currentLead.status" />
+      <div class="lead-detail__avatar" [style.background]="avatarGradient()">{{ initials() }}</div>
+      <div>
+        <h1>{{ currentLead.companyName }}</h1>
+        <app-status-badge [status]="currentLead.status" />
+      </div>
     </header>
 
-    <dl class="lead-detail__facts">
+    <div class="lead-detail__facts glass-card">
       <div>
         <dt>Branche</dt>
         <dd>{{ currentLead.industry }}</dd>
@@ -24,9 +27,9 @@
         <dt>Zuletzt angereichert</dt>
         <dd>{{ currentLead.enrichedAt ?? 'noch nicht angereichert' }}</dd>
       </div>
-    </dl>
+    </div>
 
-    <section class="lead-detail__error-history">
+    <section class="lead-detail__error-history glass-card">
       <h2>Fehlerhistorie</h2>
       @if (currentLead.errorHistory.length > 0) {
         <ul>
