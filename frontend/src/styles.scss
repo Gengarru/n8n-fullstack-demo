@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+@use './styles/tokens';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+  background: radial-gradient(
+      circle at top left,
+      var(--color-bg-gradient-start) 0%,
+      var(--color-bg-gradient-mid) 38%,
+      var(--color-bg-gradient-end) 100%
+    )
+    fixed;
+  color: var(--color-text-primary);
+}

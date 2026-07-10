@@ -1,0 +1,48 @@
+:root {
+  // Background gradient
+  --color-bg-gradient-start: #1a0d35;
+  --color-bg-gradient-mid: #0f1117;
+  --color-bg-gradient-end: #080a0f;
+
+  // Glass surfaces
+  --color-surface: rgba(255, 255, 255, 0.07);
+  --color-surface-border: rgba(255, 255, 255, 0.11);
+  --color-surface-hover: rgba(255, 255, 255, 0.13);
+
+  // Brand purple
+  --color-purple-start: #6d5cff;
+  --color-purple-end: #b24cff;
+  --color-purple-muted: #8e7cff;
+  --color-purple-bg: rgba(141, 124, 255, 0.16);
+  --color-purple-border: rgba(141, 124, 255, 0.35);
+
+  // Neon accents
+  --color-green: #8fffcb;
+  --color-green-bg: rgba(80, 220, 140, 0.16);
+  --color-green-border: rgba(80, 220, 140, 0.35);
+  --color-amber: #ffc96e;
+  --color-amber-bg: rgba(255, 201, 110, 0.16);
+  --color-amber-border: rgba(255, 201, 110, 0.35);
+  --color-red: #ff6b8a;
+  --color-red-bg: rgba(255, 107, 138, 0.16);
+  --color-red-border: rgba(255, 107, 138, 0.35);
+
+  // Text
+  --color-text-primary: #f5f7fb;
+  --color-text-secondary: #aeb6c7;
+  --color-text-tertiary: #cdd4e4;
+
+  // Radii
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  // Shadow
+  --shadow-card: 0 24px 80px rgba(0, 0, 0, 0.28);
+
+  // Spacing
+  --space-lg: 24px;
+  --space-xl: 32px;
+}
