@@ -1,2 +1,8 @@
 CLAUDE.md
-docs/
+docs/*
+!docs/superpowers/
+docs/superpowers/*
+!docs/superpowers/specs/
+
+# Superpowers brainstorming session artifacts
+.superpowers/
