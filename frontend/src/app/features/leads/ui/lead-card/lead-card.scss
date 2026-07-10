@@ -1,44 +1,70 @@
 .lead-card {
-  display: block;
-  padding: 1rem 1.25rem;
-  border: 1px solid #e5e7eb;
-  border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  gap: 14px;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-surface-border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(18px);
   cursor: pointer;
-  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  transition: background 0.15s, border-color 0.15s;
 
   &:hover {
-    border-color: #9ca3af;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    background: var(--color-surface-hover);
+    border-color: var(--color-purple-border);
   }
 
-  &__header {
+  &__avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 0.75rem;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 800;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  &__info {
+    min-width: 0;
   }
 
   &__title {
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 600;
+    margin: 0 0 2px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-text-primary);
   }
 
-  &__meta {
-    display: flex;
-    gap: 1.5rem;
-    margin: 0.75rem 0 0;
+  &__industry {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    margin-bottom: 6px;
+  }
 
-    dt {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      color: #6b7280;
-      letter-spacing: 0.03em;
-    }
+  &__score-col {
+    text-align: center;
+    min-width: 48px;
+  }
 
-    dd {
-      margin: 0;
-      font-size: 0.95rem;
-    }
+  &__score {
+    font-size: 22px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-purple-start), var(--color-purple-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  &__score-label {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-secondary);
   }
 }
