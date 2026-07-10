@@ -1,0 +1,19 @@
+<section class="lead-list">
+  <header class="lead-list__header">
+    <h1>Leads</h1>
+    <p class="lead-list__count">{{ leads().length }} Leads</p>
+  </header>
+
+  @if (leads().length > 0) {
+    <div class="lead-list__grid">
+      @for (lead of leads(); track lead.id) {
+        <app-lead-card [lead]="lead" (selected)="onLeadSelected($event)" />
+      }
+    </div>
+  } @else {
+    <p class="lead-list__empty">
+      Aktuell sind keine Leads vorhanden. Neue Leads erscheinen hier, sobald sie
+      über die Enrichment-Pipeline eingehen.
+    </p>
+  }
+</section>

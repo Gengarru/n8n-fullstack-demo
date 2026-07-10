@@ -1,0 +1,16 @@
+<article class="lead-card" (click)="onSelect()">
+  <header class="lead-card__header">
+    <h3 class="lead-card__title">{{ lead().companyName }}</h3>
+    <app-status-badge [status]="lead().status" />
+  </header>
+  <dl class="lead-card__meta">
+    <div>
+      <dt>Branche</dt>
+      <dd>{{ lead().industry }}</dd>
+    </div>
+    <div>
+      <dt>Score</dt>
+      <dd>{{ lead().score }}</dd>
+    </div>
+  </dl>
+</article>

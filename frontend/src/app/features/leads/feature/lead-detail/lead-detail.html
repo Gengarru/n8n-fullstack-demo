@@ -1,0 +1,50 @@
+@if (lead(); as currentLead) {
+  <section class="lead-detail">
+    <button class="lead-detail__back" type="button" (click)="goBack()">← Zurück zur Liste</button>
+
+    <header class="lead-detail__header">
+      <h1>{{ currentLead.companyName }}</h1>
+      <app-status-badge [status]="currentLead.status" />
+    </header>
+
+    <dl class="lead-detail__facts">
+      <div>
+        <dt>Branche</dt>
+        <dd>{{ currentLead.industry }}</dd>
+      </div>
+      <div>
+        <dt>Score</dt>
+        <dd>{{ currentLead.score }}</dd>
+      </div>
+      <div>
+        <dt>Kontakt</dt>
+        <dd>{{ currentLead.contactName }} · {{ currentLead.contactEmail }}</dd>
+      </div>
+      <div>
+        <dt>Zuletzt angereichert</dt>
+        <dd>{{ currentLead.enrichedAt ?? 'noch nicht angereichert' }}</dd>
+      </div>
+    </dl>
+
+    <section class="lead-detail__error-history">
+      <h2>Fehlerhistorie</h2>
+      @if (currentLead.errorHistory.length > 0) {
+        <ul>
+          @for (entry of currentLead.errorHistory; track entry.occurredAt) {
+            <li>
+              <span class="lead-detail__error-time">{{ entry.occurredAt }}</span>
+              <span>{{ entry.message }}</span>
+            </li>
+          }
+        </ul>
+      } @else {
+        <p class="lead-detail__error-empty">Keine Fehler für diesen Lead vermerkt.</p>
+      }
+    </section>
+  </section>
+} @else {
+  <section class="lead-detail lead-detail--not-found">
+    <p>Lead wurde nicht gefunden.</p>
+    <button class="lead-detail__back" type="button" (click)="goBack()">← Zurück zur Liste</button>
+  </section>
+}
