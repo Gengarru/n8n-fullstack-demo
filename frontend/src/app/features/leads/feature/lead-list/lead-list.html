@@ -1,8 +1,24 @@
 <section class="lead-list">
   <header class="lead-list__header">
+    <div class="lead-list__eyebrow">Lead Management</div>
     <h1>Leads</h1>
-    <p class="lead-list__count">{{ leads().length }} Leads</p>
+    <p class="lead-list__count">{{ leads().length }} Leads · Ø Score {{ averageScore() }}</p>
   </header>
+
+  <div class="lead-list__kpi-row">
+    <div class="lead-list__kpi">
+      <div class="lead-list__kpi-value">{{ leads().length }}</div>
+      <div class="lead-list__kpi-label">Leads gesamt</div>
+    </div>
+    <div class="lead-list__kpi">
+      <div class="lead-list__kpi-value lead-list__kpi-value--green">{{ averageScore() }}</div>
+      <div class="lead-list__kpi-label">Ø Score</div>
+    </div>
+    <div class="lead-list__kpi">
+      <div class="lead-list__kpi-value lead-list__kpi-value--amber">{{ newLeadCount() }}</div>
+      <div class="lead-list__kpi-label">Neu / unangereichert</div>
+    </div>
+  </div>
 
   @if (leads().length > 0) {
     <div class="lead-list__grid">
