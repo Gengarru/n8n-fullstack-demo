@@ -1,0 +1,24 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: lead-enrichment-postgres
+    environment:
+      POSTGRES_USER: lead_enrichment
+      POSTGRES_PASSWORD: lead_enrichment_dev
+      POSTGRES_DB: lead_enrichment
+    ports:
+      # Host port 5433, not 5432: this machine already runs a native
+      # PostgreSQL instance on 5432 for other projects. Mapping to 5433
+      # avoids silently colliding with it (the container's *internal*
+      # port stays 5432, only the host-side mapping changes).
+      - "5433:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lead_enrichment -d lead_enrichment"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres-data:

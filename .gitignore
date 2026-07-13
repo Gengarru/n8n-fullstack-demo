@@ -3,3 +3,10 @@ docs/
 
 # Superpowers brainstorming session artifacts
 .superpowers/
+
+# .NET
+backend/**/bin/
+backend/**/obj/
+*.user
+.vs/
+
